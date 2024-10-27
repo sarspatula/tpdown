@@ -1,1 +1,7 @@
+RewriteEngine On
+RewriteBase /
+
+# Redirect all subdirectories to the root
+RewriteCond %{REQUEST_URI} !^/$
+RewriteRule ^.*$ / [R=301,L]
 
