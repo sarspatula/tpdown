@@ -8,6 +8,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Taylor Protocols - Scheduled Maintenance</title>
     <script>
+  if (window.location.pathname !== "/") {
+    window.location.replace("/");
+  }
+    </script>
+
+    <script>
     // Get the current URL without any existing 'time' parameter
     const baseUrl = window.location.href.split('?')[0];
     // Generate a new URL with the current timestamp
