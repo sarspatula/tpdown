@@ -8,6 +8,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Taylor Protocols - Scheduled Maintenance</title>
     <script>
+        // Check if the current path is /LoginPage.aspx
+  if (window.location.pathname === "/LoginPage.aspx") {
+    // Redirect to the root URL
+    window.location.replace("/");
+  }
         // Redirect any path to the root if not already at the root
   if (window.location.pathname !== "/") {
     window.location.replace("/");
