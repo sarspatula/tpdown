@@ -1,26 +1,21 @@
-# Enable mod_rewrite engine
+# Enable mod_rewrite
 RewriteEngine On
 RewriteBase /
 
 # Redirect all paths to the root URL
 RewriteCond %{REQUEST_URI} !^/$
-RewriteRule ^(.*)$ / [L,R=301]
+RewriteRule ^.*$ / [L,R=301]
 
-# Additional optional settings for cleaner behavior
-
+# Additional settings (optional)
 # Prevent directory listing if directory has no index file
 Options -Indexes
 
-# Set default character encoding
-AddDefaultCharset UTF-8
-
-# Block access to .htaccess file itself
+# Block access to .htaccess itself for security
 <Files .htaccess>
     Order allow,deny
     Deny from all
 </Files>
 
-# Ensure all traffic is directed to HTTPS (optional if using SSL)
+# Redirect all HTTP traffic to HTTPS (optional if using SSL)
 RewriteCond %{HTTPS} off
 RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
-
