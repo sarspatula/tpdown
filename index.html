@@ -8,12 +8,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Taylor Protocols - Scheduled Maintenance</title>
     <script>
-    const currentUrl = window.location.href;
-    if (!currentUrl.includes('?time=')) {
-        const newUrl = currentUrl + '?time=' + new Date().getTime();
-        window.history.replaceState({}, '', newUrl);
-    }
+    // Get the current URL without any existing 'time' parameter
+    const baseUrl = window.location.href.split('?')[0];
+    // Generate a new URL with the current timestamp
+    const newUrl = `${baseUrl}?time=${new Date().getTime()}`;
+    // Update the URL in the browser without reloading the page
+    window.history.replaceState({}, '', newUrl);
     </script>
+
     <style>
         body {
             font-family: Arial, sans-serif;
