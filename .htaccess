@@ -1,11 +1,4 @@
-# Enable mod_rewrite
 RewriteEngine On
-
-# Redirect all requests to the root URL
-RewriteCond %{REQUEST_URI} !^/$
 RewriteRule ^.*$ / [L,R=301]
 
-# Optional: Force HTTPS on root URL only
-RewriteCond %{HTTPS} off
-RewriteRule ^$ https://%{HTTP_HOST}/ [R=301,L]
 
