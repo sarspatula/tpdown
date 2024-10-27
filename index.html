@@ -7,6 +7,13 @@
     <meta http-equiv="Expires" content="0">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Taylor Protocols - Scheduled Maintenance</title>
+    <script>
+    const currentUrl = window.location.href;
+    if (!currentUrl.includes('?time=')) {
+        const newUrl = currentUrl + '?time=' + new Date().getTime();
+        window.history.replaceState({}, '', newUrl);
+    }
+    </script>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -37,7 +44,7 @@
     <h1>We're Improving Our Services</h1>
     <p>Dear valued customer,</p>
     <p>We apologize for the inconvenience, but our website is currently undergoing planned routine maintenance to enhance your experience. We appreciate your patience and understanding.</p>
-    <p>The maintenance is scheduled for today, Sunday October 27th:</p>
+    <p>The maintenance is scheduled for today, Sunday October 27th.</p>
     <div class="time-zone">
         <strong>PST:</strong> 9:00 AM to 11:00 AM
     </div>
